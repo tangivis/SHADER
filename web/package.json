@@ -4,6 +4,7 @@
   "scripts": {
     "gen": "node scripts/gen-shaders.mjs",
     "build:wasm": "wasm-pack build .. --target web --out-dir web/pkg",
+    "build:web": "vite build",
     "dev": "vite",
     "build": "npm run build:wasm && vite build",
     "preview": "vite preview"

@@ -1,0 +1,15 @@
+{
+  "name": "shadersmith",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "shadersmith_bg.wasm",
+    "shadersmith.js",
+    "shadersmith.d.ts"
+  ],
+  "main": "shadersmith.js",
+  "types": "shadersmith.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

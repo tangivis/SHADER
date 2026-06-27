@@ -1,6 +1,7 @@
-# Rust / WASM build artifacts
+# Rust build artifacts
 /target
-web/pkg/
+# NOTE: web/pkg/ (wasm-pack output) is committed on purpose so Cloudflare Pages can
+# build with vite only (no Rust toolchain in CI). Rebuild it with `npm run build:wasm`.
 
 # Node
 web/node_modules/
