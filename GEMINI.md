@@ -1,5 +1,7 @@
 # GEMINI.md — SHADER_LIB 项目上下文
 
+> Gemini AI Hackathon 项目 · Live: https://shader-94o.pages.dev/ · Repo: https://github.com/tangivis/SHADER · by カキ · 0xtang
+
 供在本仓库工作的 coding agent 自动读取。详尽契约见 `docs/SPEC.md`。
 
 ## 一句话

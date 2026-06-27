@@ -1,5 +1,7 @@
 # SHADER_LIB — 架构与契约
 
+> Gemini AI Hackathon · Live: https://shader-94o.pages.dev/ · Repo: https://github.com/tangivis/SHADER · by カキ · 0xtang
+
 纯本地实时 shader 画廊。Rust+wgpu(WASM) 渲染，CRT 终端 UI，100 个文件夹驱动的 shader 模版，每个带实时参数。
 
 ---

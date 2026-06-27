@@ -1,7 +1,13 @@
 # SHADER_LIB 🟢
 
 > 一个**纯本地、离线**的实时 GPU 着色器画廊。100 个 shader 由 **Rust + wgpu (WASM)** 以 60fps 渲染，
-> 复古 CRT 终端界面浏览，每个 shader 都有**实时可调参数**。**无 AI、无 API key、无联网。**
+> 复古 CRT 终端界面浏览，每个 shader 都有**实时可调参数**。无需 API key、离线即跑。
+
+**▶ Live demo:** https://shader-94o.pages.dev/ · **Repo:** https://github.com/tangivis/SHADER
+**🏆 Built for the Gemini AI Hackathon** — by カキ · 0xtang
+
+> 引擎层（实时 WGSL 编译 + `naga` 校验 + 编译错误自修复回路）正是为**承接 AI / Gemini 生成的着色器**而设计：
+> 100 个预置 shader 是经过验证的基座，「自然语言 → Gemini 写 WGSL → 实时渲染 → 编译错误自修复」是其上的旗舰交互。
 
 ```
 ┌─ SHADER_LIB v1.0 ────┐
