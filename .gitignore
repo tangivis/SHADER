@@ -1,0 +1,20 @@
+# Rust / WASM build artifacts
+/target
+web/pkg/
+
+# Node
+web/node_modules/
+node_modules/
+
+# Secrets & local config
+.env
+.env.*
+*.local
+
+# Editor / tooling local state
+.claude/
+.DS_Store
+
+# Build output
+web/dist/
+dist/

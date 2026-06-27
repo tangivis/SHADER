@@ -1,0 +1,14 @@
+{
+  "name": "shaderlib-web",
+  "version": "1.0.0",
+  "scripts": {
+    "gen": "node scripts/gen-shaders.mjs",
+    "build:wasm": "wasm-pack build .. --target web --out-dir web/pkg",
+    "dev": "vite",
+    "build": "npm run build:wasm && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

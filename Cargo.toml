@@ -1,0 +1,28 @@
+[package]
+name = "shadersmith"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wgpu = "0.20"
+naga = { version = "0.20", features = ["wgsl-in"] }
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+bytemuck = { version = "1", features = ["derive"] }
+console_error_panic_hook = "0.1"
+log = "0.4"
+console_log = "1"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "Window", "Document", "Element", "HtmlCanvasElement",
+  "DomRect", "Performance"
+]
+
+[profile.release]
+opt-level = "s"

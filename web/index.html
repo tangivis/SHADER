@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHADER_LIB</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script>
+    // Compat shim: wgpu 0.20 requests deprecated WebGPU limits that modern Chrome rejects.
+    if (navigator.gpu && GPUAdapter.prototype.requestDevice) {
+      const orig = GPUAdapter.prototype.requestDevice;
+      GPUAdapter.prototype.requestDevice = function (descriptor) {
+        if (descriptor && descriptor.requiredLimits) {
+          delete descriptor.requiredLimits.maxInterStageShaderComponents;
+          delete descriptor.requiredLimits.maxInterStageShaderVariables;
+        }
+        return orig.call(this, descriptor);
+      };
+    }
+  </script>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="crt" aria-hidden="true"></div>
+
+  <aside id="term">
+    <div id="term-head">
+      <div class="ln accent">SHADER_LIB v1.0</div>
+      <div class="ln dim"><span id="count">[100 entries]</span> <span class="cursor">_</span></div>
+      <div class="filter-wrap">
+        <span class="prompt">&gt;</span>
+        <input id="filter" type="text" autocomplete="off" spellcheck="false" placeholder="type to filter..." />
+      </div>
+    </div>
+
+    <div id="list"></div>
+
+    <div id="params">
+      <div class="ln dim">&mdash;&mdash; PARAMS &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div>
+      <label class="prm"><span class="pk">SPEED</span><input type="range" id="p-speed" min="0" max="3" step="0.01" value="1" /><span class="pv" id="v-speed">1.00</span></label>
+      <label class="prm"><span class="pk">SCALE</span><input type="range" id="p-scale" min="0.2" max="4" step="0.01" value="1" /><span class="pv" id="v-scale">1.00</span></label>
+      <label class="prm"><span class="pk">HUE</span><input type="range" id="p-hue" min="0" max="1" step="0.01" value="0" /><span class="pv" id="v-hue">0.00</span></label>
+      <label class="prm"><span class="pk">BRIGHT</span><input type="range" id="p-bright" min="0.2" max="2" step="0.01" value="1" /><span class="pv" id="v-bright">1.00</span></label>
+    </div>
+
+    <div id="extras"></div>
+
+    <div id="term-foot">
+      <div class="ln" id="status">&gt; booting...</div>
+      <div class="ln dim">[&uarr;/&darr;] browse&nbsp;&nbsp;[R] random&nbsp;&nbsp;[click] load</div>
+    </div>
+  </aside>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
